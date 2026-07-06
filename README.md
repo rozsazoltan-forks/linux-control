@@ -4,14 +4,14 @@
   <i>The Windows Control Panel, on Linux</i>
 
   <p>
-    A faithful recreation of the Windows Control Panel built with Qt6, KDE Frameworks, and <a href="https://gitgud.io/atmk/libaero-qt">libAeroQt</a>, backed by real system data via <code>pacman</code>/<code>pkexec</code>/<code>ufw</code>. Best enjoyed with <a href="https://github.com/aeroshell-desktop/aerothemeplasma">AeroThemePlasma</a>, but looks great on regular KDE as well.
+    A faithful recreation of the Windows Control Panel built with Qt6, KDE Frameworks, and <a href="https://gitgud.io/atmk/libaero-qt">libAeroQt</a>, backed by real system data via <code>pacman</code>/<code>pkexec</code>/<code>ufw</code>. Best enjoyed with <a href="https://github.com/aeroshell-desktop/aerothemeplasma">AeroThemePlasma</a>.
   </p>
 
 </div>
 <br>
 
 > [!WARNING]
-> **Very much a work in progress.** Several features are placeholders or don't do anything yet, the code is janky and buggy in places, and it needs a lot more work before it's daily-driveable. Expect rough edges.
+> **Very much a work in progress.** Several features are placeholders or don't do anything yet, the code is janky and buggy in places, and it needs a lot more work before it's daily-driveable. Expect rough edges until about August.
 
 > [!NOTE]
 > **Built for CachyOS / Arch Linux.** Some features (package updates, AUR reinstall, driver-adjacent firewall config) depend on `pacman`, `yay`, and `ufw`. Other distros may need minor adjustments.
@@ -69,3 +69,9 @@ On Arch, you need these installed separately.
 - Firewall status and rule summary (reads `ufw` configuration)
 - Power Options
 - Performance page with a Windows Experience Index-style benchmark
+
+## Part of the WSL (Windows-alike Software for Linux) series
+
+Why don't you also check out the other ones?
+
+- [Linux Device Manager](https://github.com/actuallyaridan/linux-devmgmt)
