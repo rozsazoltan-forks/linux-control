@@ -75,3 +75,4 @@ On Arch, you need these installed separately.
 Why don't you also check out the other ones?
 
 - [Linux Device Manager](https://github.com/actuallyaridan/linux-devmgmt)
+- Linux Control Panel
