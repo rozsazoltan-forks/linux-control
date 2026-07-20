@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include <QStringList>
+#include "PageId.h"
 #include <QSet>
 #include <QHash>
 #include <QDateTime>
@@ -23,8 +24,8 @@ class LinuxUpdatePage : public QWidget {
 public:
     explicit LinuxUpdatePage(QScrollArea *sidebar, QWidget *parent = nullptr);
 
-    static QStringList sidebarLinks();
-    static QStringList sidebarSeeAlso();
+    static QList<SidebarLink> sidebarLinks();
+    static QList<SidebarLink> sidebarSeeAlso();
 
 public slots:
     void checkForUpdates();

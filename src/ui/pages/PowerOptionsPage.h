@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QString>
 #include <QStringList>
+#include "PageId.h"
 #include <QList>
 #include <QHash>
 
@@ -43,8 +44,8 @@ public:
     explicit PowerOptionsPage(QScrollArea *sidebar, QWidget *parent = nullptr);
 
     // Left-nav entries shown by MainWindow's subpage sidebar.
-    static QStringList sidebarLinks();
-    static QStringList sidebarSeeAlso();
+    static QList<SidebarLink> sidebarLinks();
+    static QList<SidebarLink> sidebarSeeAlso();
 
 protected:
     // Lets a click on a plan's name label select that plan, like Windows.

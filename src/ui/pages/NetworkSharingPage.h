@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QString>
 #include <QStringList>
+#include "PageId.h"
 
 class QScrollArea;
 class QVBoxLayout;
@@ -18,8 +19,8 @@ public:
     explicit NetworkSharingPage(QScrollArea *sidebar, QWidget *parent = nullptr);
 
     // Left-nav entries shown by MainWindow's subpage sidebar.
-    static QStringList sidebarLinks();
-    static QStringList sidebarSeeAlso();
+    static QList<SidebarLink> sidebarLinks();
+    static QList<SidebarLink> sidebarSeeAlso();
 
 private:
     // Live network facts, collected once in the constructor.

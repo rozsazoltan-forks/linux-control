@@ -5,6 +5,7 @@
 #include <QHash>
 #include <QSoundEffect>
 #include <QGraphicsOpacityEffect>
+#include "PageId.h"
 
 class QScrollArea;
 class QLineEdit;
@@ -40,12 +41,20 @@ private:
     QWidget *buildHomePage();
     QWidget *buildCategoryPage(const QString &category);
     QScrollArea *buildNavSidebar(const QString &currentCategory);
-    QScrollArea *buildSubpageSidebar(const QStringList &links,
-                                     const QStringList &seeAlso = {});
+    QScrollArea *buildSubpageSidebar(const QList<SidebarLink> &links,
+                                     const QList<SidebarLink> &seeAlso = {});
+
+    // Point a freshly built sidebar label at the destination its link declares
+    // (another page, home, an external command, or an in-app applet).
+    void registerLinkTarget(QLabel *label, const LinkTarget &target);
 
     void setCrumbTrail(const QStringList &trail);
     void navigateHome();
     void navigateTo(const QString &path);
+
+    // Open an in-app applet dialog (e.g. "datetime", "datetime:additional"),
+    // the Windows-style modal popup for a Control Panel item.
+    void openApplet(const QString &id);
 
     // History-aware rendering. An empty string represents the home page.
     void pushHistory(const QString &entry);
@@ -75,6 +84,10 @@ private:
     // run, stored as {program, arg, arg, ...} (e.g. the Desktop Gadgets links
     // that open KDE Plasma's widget panels).
     QHash<QObject *, QStringList> m_commandLinks;
+
+    // Maps task/title labels to an in-app applet id opened as a modal dialog
+    // (e.g. "datetime"). See openApplet.
+    QHash<QObject *, QString> m_appletLinks;
 
     // Maps intermediate crumb labels to their navigation paths.
     QHash<QObject *, QString> m_crumbNavLinks;

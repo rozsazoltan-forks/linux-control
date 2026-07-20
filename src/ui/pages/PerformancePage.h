@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include <QStringList>
+#include "PageId.h"
 #include "perf/WeiBenchmark.h"
 
 class QScrollArea;
@@ -21,8 +22,8 @@ class PerformancePage : public QWidget {
 public:
     explicit PerformancePage(QScrollArea *sidebar, QWidget *parent = nullptr);
 
-    static QStringList sidebarLinks();
-    static QStringList sidebarSeeAlso();
+    static QList<SidebarLink> sidebarLinks();
+    static QList<SidebarLink> sidebarSeeAlso();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
