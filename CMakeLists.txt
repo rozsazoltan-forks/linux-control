@@ -12,6 +12,7 @@ find_package(KF6WidgetsAddons REQUIRED)
 find_package(KF6WindowSystem REQUIRED)
 find_package(ZLIB REQUIRED)
 find_package(OpenSSL REQUIRED)
+find_package(AeroQt REQUIRED)
 
 add_executable(controlpanel
     src/main.cpp
@@ -54,7 +55,7 @@ target_link_libraries(controlpanel PRIVATE
     KF6::WindowSystem
     ZLIB::ZLIB
     OpenSSL::Crypto
-    ${CMAKE_SOURCE_DIR}/build/libAeroQt.so
+    AeroQt
 )
 
 set_target_properties(controlpanel PROPERTIES
